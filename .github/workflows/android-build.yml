@@ -26,6 +26,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install npm dependencies (provides node_modules/@capacitor/android)
+        working-directory: .
+        run: npm install
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
